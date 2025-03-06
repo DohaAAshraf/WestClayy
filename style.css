@@ -1402,69 +1402,93 @@ form input[type="submit"], form button, form input[type="reset"] {
 
       
 
-.hero-slider {
-  position: relative;
-    
-    
- }
-  .hero-slider .slides {
-    list-style: none;
-    zoom: 1; }
-    .hero-slider .slides:after {
-      content: " ";
-      clear: both;
-      display: block;
-      overflow: hidden;
-      height: 0; }
-
-    .hero-slider .slides li {
-      min-height: 680px;
-      background-size: cover;
-      background-position: center center; } 
-
-  .hero-slider .slide-title {
-    font-size: 36px;
-    font-size: 2.5714285714em;
-    margin-top: 200px;
-    letter-spacing: 3px; }
-    .hero-slider .slide-title span {
-      display: inline-block;
-      padding: 10px 15px;
-      text-transform: uppercase;
-      background: #212121;
-      color: white;
-      margin-bottom: 10px; }
+      .hero-slider {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f4f4f4; /* Fallback background */
+        width: 100%;
+      }
       
-
-      .hero-slider .flexslider .slides img {
-        width: 100%; /* Ensures image takes full width */
-        height: 100%; /* Makes the image fill the container */
-         object-fit: cover;/* Ensures the image covers the area without stretching */
+      .hero-slider .slides {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+      
+      .hero-slider .slides li {
+        min-height: 100vh;
+        width: 100vw;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+      
+      /* Slide Titles */
+      .hero-slider .slide-title {
+        font-size: 36px;
+        font-size: 2.571em;
+        margin-top: 200px;
+        letter-spacing: 3px;
+      }
+      
+      .hero-slider .slide-title span {
+        display: inline-block;
+        padding: 10px 15px;
+        text-transform: uppercase;
+        background: #212121;
+        color: white;
+        margin-bottom: 10px;
+      }
+      
+      /* Ensuring images fit properly */
+      .hero-slider .slides img {
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        object-fit: cover; /* Ensures images cover the area without distortion */
         display: block; /* Prevents extra space below the image */
-    }
-
-  .hero-slider .flex-direction-nav {
-    position: absolute;
-    bottom: 200px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 99;
-    height: 40px;
-    list-style: none;
-    padding: 0 15px; }
-    @media screen and (min-width: 768px) {
+      }
+      
+      /* Navigation Styles */
       .hero-slider .flex-direction-nav {
-        width: 750px; } }
-    @media screen and (min-width: 992px) {
-      .hero-slider .flex-direction-nav {
-        width: 970px; } }
-    @media screen and (min-width: 1200px) {
-      .hero-slider .flex-direction-nav {
-        width: 1170px; } }
-    .hero-slider .flex-direction-nav li {
-      display: inline-block;
-      margin-right: 10px; }
+        position: absolute;
+        bottom: 200px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 99;
+        height: 40px;
+        list-style: none;
+        padding: 0 15px;
+      }
+      
+      /* Responsive Navigation Widths */
+      @media screen and (min-width: 768px) {
+        .hero-slider .flex-direction-nav {
+          width: 750px;
+        }
+      }
+      
+      @media screen and (min-width: 992px) {
+        .hero-slider .flex-direction-nav {
+          width: 970px;
+        }
+      }
+      
+      @media screen and (min-width: 1200px) {
+        .hero-slider .flex-direction-nav {
+          width: 1170px;
+        }
+      }
+      
+      .hero-slider .flex-direction-nav li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      
       .hero-slider .flex-direction-nav li a {
         width: 64px;
         height: 64px;
@@ -1473,14 +1497,37 @@ form input[type="submit"], form button, form input[type="reset"] {
         text-align: center;
         line-height: 2;
         font-size: 30px;
-        font-size: 2.1428571429em; }
-        .hero-slider .flex-direction-nav li a.flex-prev {
-          background: url("images/prev.png"); }
-        .hero-slider .flex-direction-nav li a.flex-next {
-          background: url("images/next.png"); }
-
-
-          
+        font-size: 2.142em;
+      }
+      
+      .hero-slider .flex-direction-nav li a.flex-prev {
+        background: url("images/prev.png") no-repeat center;
+      }
+      
+      .hero-slider .flex-direction-nav li a.flex-next {
+        background: url("images/next.png") no-repeat center;
+      }
+      
+      /* ============================= */
+      /* 🔹 Desktop vs Mobile Handling */
+      /* ============================= */
+      
+      /* By default, show desktop slider and hide mobile slider */
+      .mobile-slider {
+        display: none;
+      }
+      
+      /* On smaller screens, show mobile slider and hide desktop slider */
+      @media (max-width: 768px) {
+        .desktop-slider {
+          display: none;
+        }
+      
+        .mobile-slider {
+          display: block;
+        }
+      }
+      
 .fullwidth-block {
   padding: 50px 0; 
   background-color: white;

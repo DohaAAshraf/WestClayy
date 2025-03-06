@@ -8,7 +8,7 @@
             $(".mobile-navigation").toggleClass("open").stop(true, true).slideToggle(300);
         });
 
-        // Hero slider
+        // Hero slider initialization
         $(".hero-slider").flexslider({
             controlNav: false,
             directionNav: true,
@@ -17,17 +17,17 @@
             nextText: '<i class="fa fa-angle-right"></i>'
         });
 
-        // Testimonial slider with automatic sliding every 1 minute
+        // Testimonial slider with auto-sliding every 60 seconds
         $(".testimonial-slider").flexslider({
             controlNav: true,
             directionNav: false,
             animation: "slide",
             slideshow: true,
-            slideshowSpeed: 60000, // 1 minute
+            slideshowSpeed: 60000,
             animationSpeed: 600
         });
 
-        // Enhanced filtering with animation
+        // Filtering functionality with animation
         $(window).on("load", function () {
             var $container = $(".filterable-items");
             $container.isotope({
@@ -62,16 +62,42 @@
                 }
             });
 
-            lastScrollTop = scrollTop; // Update last scroll position
+            lastScrollTop = scrollTop;
         });
 
-        // Lazy load background images for slides
-        document.querySelectorAll('.slide').forEach(div => {
-            const bgImage = div.getAttribute('data-bg-image');
-            if (bgImage) {
-                div.style.backgroundImage = `url(${bgImage})`;
+        // Optimized lazy loading for slider images
+        function lazyLoadSliderImages(sliderClass) {
+            const slides = document.querySelectorAll(`.${sliderClass} .slides li`);
+
+            if ("IntersectionObserver" in window) {
+                let observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            let slide = entry.target;
+                            let bgImage = slide.dataset.bgImage;
+                            if (bgImage) {
+                                slide.style.backgroundImage = `url(${bgImage})`;
+                                observer.unobserve(slide);
+                            }
+                        }
+                    });
+                });
+
+                slides.forEach(slide => observer.observe(slide));
+            } else {
+                // Fallback for older browsers
+                slides.forEach(slide => {
+                    let bgImage = slide.dataset.bgImage;
+                    if (bgImage) {
+                        slide.style.backgroundImage = `url(${bgImage})`;
+                    }
+                });
             }
-        });
+        }
+
+        // Run lazy load on both desktop and mobile sliders
+        lazyLoadSliderImages("desktop-slider");
+        lazyLoadSliderImages("mobile-slider");
 
     });
 })(jQuery, document, window);
