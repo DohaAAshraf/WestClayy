@@ -49,9 +49,13 @@ select,
 textarea {
   font-family:"Roboto Condensed", "Open Sans", sans-serif; }
 
-body {
-  margin: 0; }
-
+  body {
+    overflow-x: hidden;
+}
+img, iframe {
+    max-width: 100%;
+    height: auto;
+}
 a {
   background: transparent; }
   a:focus {
@@ -2319,3 +2323,22 @@ hr {
       }
   }
   
+
+  @media screen and (max-width: 768px) {
+    .fade-text {
+        font-size: 14px; /* Adjust as needed */
+        line-height: 1.4;
+    }
+    
+    h1.fade-text {
+        font-size: 20px; /* Smaller heading */
+    }
+    
+    h2.fade-text {
+        font-size: 18px;
+    }
+    
+    ul.fade-text, p.fade-text {
+        font-size: 13px;
+    }
+}
