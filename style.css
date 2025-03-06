@@ -372,7 +372,7 @@ form input[type="submit"], form button, form input[type="reset"] {
       width: 10px;
       height: 10px;
       position: absolute;
-      background: #212121; }
+      background: #ffffff; }
     .contact-detail .contact-icon:before {
       border-bottom: 2px solid #383838;
       -webkit-transform: rotate(-45deg);
@@ -403,7 +403,7 @@ form input[type="submit"], form button, form input[type="reset"] {
     width: 20px;
     height: 20px;
     position: absolute;
-    background: #212121; }
+    background: #ffffff; }
   .contact-form button:before {
     border-bottom: 2px solid #f4c545;
     -webkit-transform: rotate(-45deg);
@@ -1862,25 +1862,33 @@ form input[type="submit"], form button, form input[type="reset"] {
 
 
 .section-title {
-  font-size: 36px;
   font-size: 2em;
-            font-weight: bold;
-            color: #dea815;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            text-transform: uppercase; 
-            text-align: center;
-          }
+  font-weight: bold;
+  color: #dea815;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  text-align: center;
+}
+
 .testimonial-slider {
-  padding: 40px; /* Increased padding for a bigger box */
+  padding: 40px;
   background: white;
-  border-radius: 15px; /* Slightly more rounded corners */
+  border-radius: 15px;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-  max-width: 90%; /* Adjusts the width */
-  width: 100%; /* Ensures it takes full width within the parent */
-  min-height: 400px; /* Sets a minimum height */
-  margin: 0 auto; /* Centers the box */
+  max-width: 90%;
+  width: 100%;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial-slider {
+    max-width: 100%;
+    padding: 0px; /* Reduce padding for better fit */
+    box-shadow: none;
+    background: transparent;
+  }
 }
 
 .testimonial-slider ul {
@@ -1891,27 +1899,31 @@ form input[type="submit"], form button, form input[type="reset"] {
 blockquote {
   font-size: 20px;
   line-height: 1.6;
-  color: #000000;
+  color: #000;
   padding: 20px;
-  background: #ffffff;
+  background: #fff;
   border-left: 5px solid #d5a214;
   border-radius: 5px;
 }
+
 blockquote h1, blockquote h2 {
   font-size: 28px;
   color: #99acf4;
   font-weight: bold;
   margin-top: 20px;
 }
+
 blockquote p {
   font-size: 18px;
   color: #444;
   font-weight: bold;
 }
+
 blockquote ul {
   font-size: 18px;
   padding-left: 20px;
 }
+
 blockquote ul li {
   margin-bottom: 5px;
 }
@@ -1924,57 +1936,71 @@ cite {
   text-align: right;
   margin-top: 20px;
 }
+
 hr {
   border: 1px solid #f3f2ef;
 }
 
-
 .testimonial-slider .slides {
   list-style: none;
   margin-bottom: 30px;
-  zoom: 1; } 
-  .testimonial-slider .slides:after {
-    content: " ";
-    clear: both;
-    display: block;
-    overflow: hidden;
-    height: 0; }
+  zoom: 1;
+}
+
+.testimonial-slider .slides:after {
+  content: " ";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  height: 0;
+}
+
 .testimonial-slider blockquote {
-  margin: 0; }
-  .testimonial-slider blockquote cite {
-    display: block;
-    margin-top: 20px;
-    color: #8e6800;
-    font-style: normal; }
+  margin: 0;
+}
+
+.testimonial-slider blockquote cite {
+  display: block;
+  margin-top: 20px;
+  color: #8e6800;
+  font-style: normal;
+}
+
 .testimonial-slider .flex-control-nav {
-  list-style: none; }
-  .testimonial-slider .flex-control-nav li {
-    display: inline-block;
-    margin-right: 5px; }
-    .testimonial-slider .flex-control-nav li a {
-      overflow: hidden;
-      text-indent: -9999px;
-      width: 14px;
-      height: 14px;
-      display: block;
-      background: url(images/paging-inactive.png) no-repeat;
-      cursor: pointer; }
-      .testimonial-slider .flex-control-nav li a.flex-active {
-        background: url(images/paging-active.png) no-repeat; }
+  list-style: none;
+}
 
+.testimonial-slider .flex-control-nav li {
+  display: inline-block;
+  margin-right: 5px;
+}
 
-        .fade-text {
-          opacity: 0; /* Initially hidden */
-          transform: translateX(-50px); /* Start from left */
-          transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-      }
-      
-      .slide-in-left {
-          opacity: 1;
-          transform: translateX(0); /* Slide into view */
-      }
-      
-      
+.testimonial-slider .flex-control-nav li a {
+  overflow: hidden;
+  text-indent: -9999px;
+  width: 14px;
+  height: 14px;
+  display: block;
+  background: url(images/paging-inactive.png) no-repeat;
+  cursor: pointer;
+}
+
+.testimonial-slider .flex-control-nav li a.flex-active {
+  background: url(images/paging-active.png) no-repeat;
+}
+
+.fade-text {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.slide-in-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+          
 .news {
   list-style: none; }
   .news .date {
@@ -2326,19 +2352,19 @@ hr {
 
   @media screen and (max-width: 768px) {
     .fade-text {
-        font-size: 14px; /* Adjust as needed */
-        line-height: 1.4;
+        font-size: 10px; /* Adjust as needed */
+        line-height: 1;
     }
     
     h1.fade-text {
-        font-size: 20px; /* Smaller heading */
+        font-size: 10px; /* Smaller heading */
     }
     
     h2.fade-text {
-        font-size: 18px;
+        font-size: 10px;
     }
     
     ul.fade-text, p.fade-text {
-        font-size: 13px;
+        font-size: 10px;
     }
 }
