@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		<meta name="description" content="Discover modern real estate projects with high-end facilities including outdoor cinemas, barbecue areas, and kids' play zones.">
+
+
+		<title>West Clay</title>
+
+		<link rel="icon" type="image/png" href="images/logoUnits.png">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|" rel="stylesheet" type="text/css">
+		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.2/css/lightgallery.min.css" rel="stylesheet">
+		
+		 <!-- Link Bootstrap CSS -->
+		 <link rel="stylesheet" href="bootstrap.css">
+
+		 <!-- Other Stylesheets -->
+		 <link rel="stylesheet" href="style.css">
+
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="style.css">
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+
+		<style>
+			.containerr {
+            width: 85%;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+       .facilities-text {
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2px;
+            position: center;
+			color: #f4c545;
+        }
+		.title-text{
+			color: #f4c545;
+			font-size: 18px;
+            font-weight: bold;
+
+		}
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .image-box {
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            transition: transform 0.7s ease-in-out;
+            border-radius: 15px;
+        }
+
+        .image-box:hover img {
+            transform: scale(1.1);
+        }
+		
+		/* Overlay for Title & Caption */
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 0 0 15px 15px;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        /* Show overlay on hover (Desktop only) */
+        @media (hover: hover) {
+            .image-box:hover .overlay {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Show overlay by default on mobile */
+        @media (max-width: 768px) {
+            .overlay {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+		</style>
+
+	</head>
+
+
+	<body>
+		
+		
+		<div id="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="index.html" id="branding">
+						<img src="images/logoUnits.png" alt="" class="logo">
+						<div class="logo-text">
+							<h1 class="site-title">UNITS</h1>
+							<small class="site-description">Real Estate</small>
+						</div>
+					</a> <!-- #branding -->
+
+					<!-- Navigation with icons only -->
+<div class="main-navigation">
+    <a href="tel:19664" class="phone" title="Call Us">
+        <i class="fa fa-phone" style="font-size:24px" ></i> 
+		<span>Call Us</span>
+
+		
+    </a>
+    <a href="mailto:info@unitsrealestate.com" class="email" title="Email Us">
+		<i class="fa fa-envelope" style="font-size:24px"></i>
+		<span>Email Us</span>
+
+    </a>
+</div>
+					<div class="mobile-navigation"></div>
+				</div>
+			</div>
+			<!-- .site-header -->
+<!-- .site-header -->
+<div class="hero hero-slider desktop-slider">
+    <ul class="slides">
+        <!-- Desktop Images -->
+        <li data-bg-image="dummy/westclay.png"></li>
+        <li data-bg-image="dummy/image5.png"></li>
+        <li data-bg-image="dummy/image7.png"></li>
+    </ul>
+</div> <!-- .desktop-slider -->
+
+<div class="hero hero-slider mobile-slider">
+    <ul class="slides">
+        <!-- Mobile Images -->
+        <li data-bg-image="dummy/image2.png"></li>
+        <li data-bg-image="dummy/image3.png"></li>
+        <li data-bg-image="dummy/imagemap.png"></li>
+    </ul>
+</div> <!-- .mobile-slider -->
+
+
+			<main class="main-content">
+				<div class="containerr">
+					<h2 class="facilities-text">FACILITIES</h2>
+					<div class="image-grid">
+						
+			
+						<div class="image-box">
+							<img src="dummy/clubhouse.png" alt="Luxury Clubhouse" loading="lazy">
+							<div class="overlay">
+								<h3 class="title-text">Luxury Clubhouse</h3>
+								<p>Relax and enjoy premium facilities.</p>
+							</div>
+						</div>
+			
+						<div class="image-box">
+							<img src="dummy/outdoor.png" alt="Luxury Clubhouse" loading="lazy">
+							<div class="overlay">
+								<h3 class="title-text">Outdoor Cenima</h3>
+								<p>Enjoy movies under the stars</p>
+							</div>
+						</div>
+			
+						<div class="image-box">
+							<img src="dummy/barbecue.png" alt="Barbecue Party" loading="lazy">
+							<div class="overlay">
+								<h3 class="title-text">Barbecue Party</h3>
+								<p>Enjoy delicious grilled meals with friends.</p>
+							</div>
+						</div>
+						<div class="image-box">
+							<img src="dummy/kids.png" alt="Kids Play Area" loading="lazy">
+                			<div class="overlay">
+                 			   <h3 class="title-text">Kids Play Area</h3>
+                  				<p>A fun and safe space for children to play.</p>
+                			</div>
+						</div>
+						<div class="image-box">
+							<img src="dummy/tracking.png" alt="Cycling Tracks" loading="lazy">
+							<div class="overlay">
+								<h3 class="title-text">Cycling Tracks</h3>
+								<p>Ride safely on dedicated cycling paths.</p>
+							</div>
+						</div>
+						
+						<div class="image-box">
+							<img src="dummy/school.png" alt="International School" loading="lazy">
+							<div class="overlay">
+								<h3 class="title-text">International School</h3>
+								<p>Quality learning spaces for all ages.</p>
+							</div>
+						</div>
+						<div class="image-box">
+							<img src="dummy/padel.png" alt="Padel Court" loading="lazy">
+							<div class="overlay">
+								<h3 class="title-text">Padel Court</h3>
+								<p>Enjoy exciting padel matches with friends.</p>
+							</div>
+						</div>
+						<div class="image-box">
+							<img src="dummy/pool.png" alt="Swimming Pool" loading="lazy">
+							<div class="overlay">
+								<h3 class="title-text">Swimming Pool</h3>
+								<p>Relax and swim in our premium pool.</p>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			
+				<script>
+					document.addEventListener("DOMContentLoaded", function () {
+						const images = document.querySelectorAll(".image-box");
+						let delay = 0;
+			
+						function scrollAnimation() {
+							images.forEach((img, index) => {
+								const rect = img.getBoundingClientRect();
+								if (rect.top < window.innerHeight * 0.85 && !img.classList.contains("show")) {
+									setTimeout(() => {
+										img.classList.add("show");
+									}, index * 100);
+								}
+							});
+						}
+			
+						window.addEventListener("scroll", scrollAnimation);
+						scrollAnimation();
+					});
+				</script>
+					
+						<hr class="separator">
+
+						<div class="row">
+							<div class="col-md-12">
+								<h2 class="section-title">Description</h2>
+								<div class="testimonial-slider">
+									<ul class="slides">
+										<!-- Slide 1: Welcome & Concept -->
+										<li>
+											<blockquote>
+												<h1 class="fade-text">Welcome to WESTCLAY</h1>
+												<p class="fade-text" >West Clay Compound – A Luxurious Residential Community in 6th of October City</p>
+												<p class="fade-text">West Clay Compound is a prestigious residential project developed by Remal Real Estate Development Company, offering a modern and upscale living experience in 6th of October City. Spanning 10 acres, the compound combines contemporary architectural designs with vast green spaces and high-end facilities to provide residents with a comfortable and secure environment.</p>
+												<hr>
+												<h2 class="fade-text"><i class="fa fa-map-marker" style="font-size:30px;color:red"></i> Prime Location in 6th of October City</h2>
+												<p class="fade-text" >Located in the Fourth Tourist Area of 6th of October City, WESTCLAY is strategically positioned for easy access:</p>
+												<ul class="fade-text">
+													<li class="fade-text">⭐ 1 minute from major roads: Dahshour Link, July 26 Corridor, and Al-Wahat Road.</li>
+													<li class="fade-text">⭐ 3 minutes from Mall of Egypt.</li>
+													<li class="fade-text">⭐ 2 minutes from Juhayna Square.</li>
+													<li class="fade-text">⭐ 2 minutes from Nile University.</li>
+													<li class="fade-text">⭐ 3 minutes from Cairo University, 6th of October branch.</li>
+													<li class="fade-text">⭐ 2 minutes from Dar Al Fouad Hospital.</li>
+													<li class="fade-text">⭐ 1 minute from Mall of Arabia.</li>
+													<li class="fade-text">⭐ 2 minutes from Misr University.</li>
+
+												</ul>
+												<hr>
+												<h2 class="fade-text">Project Area</h2>
+												<p class="fade-text">WESTCLAY spans <strong>25 acres</strong>, covered with green spaces and water features.</p>
+												
+												<hr>
+												<h2 class="fade-text">Residential Units & Pricing</h2>
+												<p class="fade-text"> <strong>West Clay offers a variety of unit types, including:</strong></p>
+												<ul>
+													<li class="fade-text"><strong>Apartments & Duplexes</strong></li>
+													<li class="fade-text"><strong>Sizes:</strong> Units start from 100 square meters, with duplexes ranging up to 240 square meters.</li>
+													<li class="fade-text"><strong>Prices:</strong> Starting at 5,500,000 EGP.</li>
+													<li class="fade-text"><strong>Payment Plan:</strong> Flexible options with 10% down payment and installments over 7 years.</li>
+												</ul>
+												<hr>
+												
+												<h2 class="fade-text">Modern Design & Green Spaces</h2>
+												<ul>
+													<li class="fade-text">Designed by renowned engineering consultant Mohamed Talaat, West Clay emphasizes a balance between modern architecture and nature. The compound features expansive green areas, landscaped gardens, and water features, creating a tranquil and refreshing atmosphere. The sustainable design incorporates alternative energy sources, ensuring an eco-friendly and healthy living environment.</li>
+													
+												</ul>
+												
+												
+												
+												<cite class="fade-text">WESTCLAY</cite>
+											</blockquote>
+										</li>
+										
+										<!-- Slide 2:   Services -->
+										<li>
+											<blockquote>
+												
+												<h2 class="fade-text">Integrated Community</h2>
+												<ul>
+													<li class="fade-text">International school</li>
+													<li class="fade-text">Mosque</li>
+													<li class="fade-text">Gas station</li>
+													<li class="fade-text">Public parking spaces</li>
+												</ul>
+												<hr>
+												<h2 class="fade-text">Premium Facilities & Services</h2>
+												<p class="fade-text">West Clay Compound is equipped with a range of high-end amenities catering to residents' comfort and convenience, including:</p>
+												<p class="fade-text">✅ Essential Services</p>
+												<ul class="fade-text">
+													<li class="fade-text">24/7 Security & Surveillance – Electronic gates, security personnel, and advanced CCTV systems ensure safety.</li>
+													<li class="fade-text">Medical Clinics & Pharmacies – Providing quick access to healthcare services within the compound.</li>
+													<li class="fade-text">Maintenance Services – Round-the-clock facility management for hassle-free living.</li>
+													<li class="fade-text">Customer Service Center – A dedicated team available to assist residents at all times.</li>
+												<p class="fade-text">✅ Recreational & Lifestyle Amenities</p>
+													<li class="fade-text">Swimming Pools – Multiple pools with varying depths for all age groups.</li>
+													<li class="fade-text">Sports Courts – Including football, basketball, and volleyball facilities.</li>
+													<li class="fade-text">Gym & Spa – Fully equipped fitness center and relaxation spaces.</li>
+													<li class="fade-text">Social Club & Kids Area – Ideal for family gatherings and children’s activities.</li>
+													<li class="fade-text">Cinemas & Restaurants – On-site entertainment options offering fine dining and leisure activities.</li>
+													
+												</ul>
+
+												<hr>
+												<h2 class="fade-text">Why Choose West Clay Compound?</h2>
+												<ul>
+													<li class="fade-text"><span style="background-color: #e1e4ee;">Luxury Living </span> – A well-planned community with premium designs and modern infrastructure.</li>
+													<li class="fade-text"><span style="background-color: #e1e4ee;">Ideal Location</span> – Close to major attractions, educational institutions, and business hubs.</li>
+													<li class="fade-text"><span style="background-color: #e1e4ee;">Sustainability</span> – Environmentally friendly initiatives, including green energy solutions.</li>
+													<li class="fade-text"><span style="background-color: #e1e4ee;">Comprehensive Amenities</span> – Everything needed for a comfortable and fulfilling lifestyle in one place.</li>
+												</ul>
+												<hr>
+												<hr>
+												<hr>
+												<p class="description-text">
+													West Clay Compound presents a perfect blend of elegance, security, and convenience, making it an ideal destination for those seeking a luxurious and well-connected residential community in 6th of October City.
+												  </p>												<cite class="fade-text">WESTCLAY</cite>
+											</blockquote>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div> <!-- .container -->
+				</div> <!-- .fullwidth-block -->
+			</main> <!-- .main-content -->
+			<div class="image-slider">
+				<div class="slider-track">
+					<div class="slide" data-bg-image="dummy/im44.png"></div>
+					<div class="slide" data-bg-image="dummy/im44.png"></div>
+					<div class="slide" data-bg-image="dummy/im44.png"></div>
+					<div class="slide" data-bg-image="dummy/im44.png"></div>
+					<!-- Duplicate slides for seamless looping -->
+					<div class="slide" data-bg-image="dummy/im44.png"></div>
+					<div class="slide" data-bg-image="dummy/im44.png"></div>
+					<div class="slide" data-bg-image="dummy/im44.png"></div>
+					<div class="slide" data-bg-image="dummy/im44.png"></div>
+				</div>
+			</div>
+			<div id="site-content">
+				<main class="main-content">
+					<div class="page">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-8">
+									
+									<div class="goldimg" data-bg-image="dummy/gold1.png"></div>
+
+	
+									<div class="contact-detail">
+										<address>
+											<div class="contact-icon">
+												<img src="images/icon-marker.png" class="icon">
+											</div>
+											<p><strong>UNITS REAL ESTATE</strong> <br>16, El Nozha Str. From First Entrance Sheikh Zayed, 6 October, Giza, Egypt</p>
+										</address>
+										<a href="tel:19664" class="phone"><span class="contact-icon"><img src="images/icon-phone.png" class="icon"></span> 19664</a>
+										<a href="mailto:info@unitsrealestate.com" class="email"><span class="contact-icon"><img src="images/icon-envelope.png" class="icon"></span> info@unitsrealestate.com</a>
+									</div>
+								</div>
+								<div class="col-md-3 col-md-offset-1">
+									<div class="contact-form">
+										<h2 class="section-title">Write us</h2>
+										<p>Feel free to reach out to us with any questions, feedback, or inquiries. We're here to help!</p>
+	
+										<form action="https://formspree.io/f/mwpvdban" method="POST">
+											<input type="text" name="name" placeholder="Your name.." required>
+											<input type="email" name="email" placeholder="Email.." required>
+											<input type="number" name="phone" placeholder="Phone Number..">
+											<textarea name="message" placeholder="Message..." required></textarea>
+											<p class="text-right">
+												<button type="submit">Send message</button>
+											</p>
+										</form>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> <!-- .page -->
+	
+				</main> <!-- .main-content -->
+	
+			<footer class="site-footer">
+				<div class="container">
+					<div class="pull-left">
+
+						<address>
+							<strong>UNITS REAL ESTATE</strong>
+							<p>16, El Nozha Str. From First Entrance Sheikh Zayed, 6 October, Giza, Egypt</p>
+						</address>
+
+						<a href="#" class="phone">(+20) 01020080003 / (+20) 01023808080</a>
+					</div> <!-- .pull-left -->
+					<div class="pull-right">
+
+						<div class="social-links">
+
+							<a href="https://www.facebook.com/share/1FNAYxxdn7/"><i class="fa fa-facebook"></i></a>
+							<a href="https://twitter.com/unitsrealestate"><i class="fa fa-twitter"></i></a>
+							<a href="https://www.instagram.com/units_realestate/"><i class="fa fa-instagram"></i></a>
+
+						</div>
+
+					</div> <!-- .pull-right -->
+
+					<!-- <div class="colophon">Copyright 2025 UNITS. Designed by <a href="http://www.vandelaydesign.com/" title="Designed by VandelayDesign.com" target="_blank">Doha</a>. All rights reserved.</div> -->
+
+				</div> <!-- .container -->
+			</footer> <!-- .site-footer -->
+		</div>
+
+
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/isotope/3.0.6/isotope.pkgd.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.2/js/lightgallery.min.js"></script>
+		
+	
+		<!-- jQuery (always include first if other scripts depend on it) -->
+<script src="js/jquery-1.11.1.min.js"></script>
+
+<!-- Plugins -->
+<script src="js/plugins.js"></script>
+
+<!-- Main App Script -->
+<script src="js/app.js"></script>
+
+
+
+<!-- Minified JavaScript Files
+<script src="js/min/app-min.js"></script>
+<script src="js/min/core-min.js"></script>
+<script src="js/min/plugins-min.js"></script>
+
+ IE Support Scripts 
+<script src="js/ie-support/html5.js"></script>
+<script src="js/ie-support/respond.js"></script>
+
+Additional JS Files 
+<script src="jscopy/core.min.js"></script>
+<script src="jscopy/html5shiv.min.js"></script>
+<script src="jscopy/pointer-events.min.js"></script>
+<script src="jscopy/script.js"></script> -->
+
+	</body>
+
+</html>
