@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West Clay</title>
+
+		<link rel="icon" type="image/png" href="images/logoUnits.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.start-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #9d7c49c9,#dfb156 , #e0d7d1); /* Smooth mix of dark pink and dark blue */
+    background-size: 300% 300%;
+    animation: gradientAnimation 6s ease infinite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+
+.start-page img {
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    object-fit: cover; /* Ensures the image fills the circle properly */
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInZoom 2s ease-out forwards;
+    border: 5px solid rgba(255, 255, 255, 0); /* Optional: adds a white border for elegance */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="start-page">
+        <img id="animated-image" src="dummy/goldd.png" alt="Gold">
+        <h1 id="animated-text"></h1>
+    </div>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const lines = [
+        "Want to Own a Luxurious Unit in West Clay and Get 2 Gold Pounds as a Gift? 🎁✨",
+        "This exclusive offer is only from Units Real Estate—Don’t miss out!"
+    ];
+    
+    const animatedText = document.getElementById("animated-text");
+    const animatedImage = document.getElementById("animated-image");
+    let lineIndex = 0, charIndex = 0;
+
+    function typeText() {
+        if (charIndex < lines[lineIndex].length) {
+            animatedText.innerHTML += lines[lineIndex][charIndex];
+            charIndex++;
+            setTimeout(typeText, 100);
+        } else if (lineIndex < lines.length - 1) {
+            lineIndex++;
+            charIndex = 0;
+            animatedText.innerHTML += "<br><br>";
+            setTimeout(typeText, 100);
+        } else {
+            setTimeout(() => {
+                document.querySelector(".start-page").classList.add("hidden");
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 1000);
+            }, 2000);
+        }
+    }
+
+    // Delay image animation slightly for a nice effect
+    setTimeout(() => {
+        animatedImage.style.opacity = "1";
+    }, 500);
+
+    typeText();
+});
+
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
