@@ -10,6 +10,7 @@
             "type": "chrome",
             "url": "http://localhost:5501",
             "webRoot": "${workspaceFolder}"
+            
         }
 
 
