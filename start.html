@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Units Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+   /* Smooth background color mix of dark pink & dark blue */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff0066, #330066);
+    color: white;
+    text-align: center;
+}
+
+/* Popup Overlay - Light dim effect */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Light dim effect */
+    display: none;
+    z-index: 999;
+}
+
+/* Small Popup Box */
+.popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background: white;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden initially */
+    z-index: 1000;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: red;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+input {
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: darkgoldenrod;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Popup Overlay -->
+<div id="popup-overlay" class="popup-overlay"></div>
+
+<!-- The Popup Box -->
+<div id="popup" class="popup-box">
+    <span class="close-btn">&times;</span>
+    <h2>🏡 Special Offer!</h2>
+    <p>Buy a unit from <strong>West Clay</strong> in Units Real Estate and receive <strong>2 gold pounds!</strong> 🎁</p>
+    
+    <!-- Form -->
+    <form id="popup-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" required>
+
+        <button type="submit">Claim Offer</button>
+    </form>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("popup");
+    const overlay = document.getElementById("popup-overlay");
+    const closeBtn = document.querySelector(".close-btn");
+
+    // Show popup and overlay on page load
+    popup.style.display = "block";
+    overlay.style.display = "block";
+
+    // Function to close popup
+    function closePopup() {
+        popup.style.display = "none";
+        overlay.style.display = "none";
+    }
+
+    // Close the popup when clicking the close button
+    closeBtn.addEventListener("click", closePopup);
+
+    // Close popup when clicking outside of it
+    overlay.addEventListener("click", closePopup);
+
+    // Handle form submission
+    document.getElementById("popup-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent page reload
+        alert("Thank you! Our team will contact you soon.");
+        closePopup();
+    });
+});
+
+</script>
+    <script src="script.js"></script>
+
+</body>
+</html>

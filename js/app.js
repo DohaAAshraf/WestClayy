@@ -99,5 +99,20 @@
         lazyLoadSliderImages("desktop-slider");
         lazyLoadSliderImages("mobile-slider");
 
+        // 🛑 Notification Popup 🛑
+
+        // Show notification after 3 seconds
+        setTimeout(function () {
+            $("#overlay-popup").fadeIn();
+            $("#popup-box").addClass("popup-show");
+        }, 3000);
+
+        // Close notification
+        $(".btn-close").click(function () {
+            $("#overlay-popup").fadeOut();
+            $("#popup-box").removeClass("popup-show");
+        });
+
+        
     });
 })(jQuery, document, window);
