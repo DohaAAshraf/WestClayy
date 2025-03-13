@@ -2563,7 +2563,7 @@ hr {
   align-items: center;
   border-top: 1px solid #383838;
   width: 100%; /* Adjust width if needed */
-  padding-left: 40px;
+  padding-left: 10px;
   padding-bottom: 40px;
 }
 
@@ -2618,6 +2618,7 @@ hr {
   text-align: center;
   color: #4a494d;
   transition: 0.3s ease;
+  margin-top: 3px;
 }
 
 .site-footer .social-links a:hover {
