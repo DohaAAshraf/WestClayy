@@ -382,9 +382,20 @@ form select {
   appearance: none; }
 form textarea {
   resize: vertical; }
-form input[type="submit"], form button, form input[type="reset"] {
-  outline: none; }
-
+  form input[type="submit"], form button, form input[type="reset"] {
+    border: 2px solid #f4c545;
+    background: none;
+    padding: 10px 20px;
+    position: relative;
+    margin: 20px 0;
+    display: block;  /* Ensure it's properly displayed */
+    width: 60%;  /* Full width for better visibility on mobile */
+    text-align: center; 
+    color: #f4c545 !important; /* Make sure text is visible */
+    font-size: 16px; 
+    font-weight: bold;
+    transition: .3s ease;
+  }
 /*
  * Reusable Components Style
  */
