@@ -1410,15 +1410,24 @@ form input[type="submit"], form button, form input[type="reset"] {
   float: left;
   margin-top: 10px;
   display: flex;
-  align-items: center; }
+  align-items: center; 
+  gap: 10px;}
 
   #branding .logo, #branding .logo-text {
     display: inline-block;
     vertical-align: middle; }
 
+    /* Default styles for the logo */
+.logo {
+  max-width: 200px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+}
+
   #branding .logo {
     margin-right: 10px;
     height: 70px; /* Adjust logo size */
+    width: 70px;
    }
   #branding .site-title {
     font-size: 15px;
