@@ -99,9 +99,7 @@
         lazyLoadSliderImages("desktop-slider");
         lazyLoadSliderImages("mobile-slider");
 
-        // 🛑 Notification Popup 🛑
-
-        // Show notification after 3 seconds
+        // Notification Popup
         setTimeout(function () {
             $("#overlay-popup").fadeIn();
             $("#popup-box").addClass("popup-show");
@@ -113,6 +111,64 @@
             $("#popup-box").removeClass("popup-show");
         });
 
+        $(document).ready(function () {
+            const downloadButton = $("#downloadBtn");
+            const form = $(".contact-form form");
+            let formSubmitted = false;
         
+            // Handle form submission
+            form.on("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+        
+                // Validate required fields
+                const name = $("#name").val().trim();
+                const email = $("#email").val().trim();
+                const message = $("#message").val().trim();
+        
+                if (!name || !email || !message) {
+                    alert("Please fill out all required fields before submitting.");
+                    return;
+                }
+        
+                // Simulate form submission via AJAX
+                $.ajax({
+                    url: form.attr("action"),
+                    method: form.attr("method"),
+                    data: form.serialize(),
+                    dataType: "json",
+                    success: function () {
+                        formSubmitted = true;
+                        alert("Form submitted successfully! Your brochure will now be downloaded.");
+        
+                        // Automatically download the brochure
+                        setTimeout(() => {
+                            const brochureUrl = "dummy/brochure.pdf"; // Adjust path if needed
+                            const link = document.createElement("a");
+                            link.href = brochureUrl;
+                            link.download = "dummy/brochure.pdf"; // Force download
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        }, 1000);
+        
+                        // Reset form fields after submission
+                        form[0].reset();
+                    },
+                    error: function () {
+                        alert("There was a problem submitting the form. Please try again.");
+                    }
+                });
+            });
+        
+            // Prevent download if form isn't submitted
+            downloadButton.on("click", function (event) {
+                if (!formSubmitted) {
+                    event.preventDefault();
+                    alert("You need to submit the form first!");
+                }
+            });
+        });
+        
+
     });
 })(jQuery, document, window);
