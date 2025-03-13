@@ -133,19 +133,8 @@ summary {
   border-radius: 5px;
 }
 
-#btn-submit {
-  background: #007bff;
-  color: white;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-}
 
-#btn-submit:hover {
-  background: #0056b3;
-}
+
 
 audio,
 canvas,
