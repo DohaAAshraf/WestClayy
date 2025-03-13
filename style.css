@@ -21,8 +21,10 @@ summary {
   display: block; }
 /* Overlay - Blurred Background */
 #overlay-popup {
-  display: none;
+  display: flex;
   position: fixed;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -38,7 +40,8 @@ summary {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8);
-  width: 500px;
+  width: 400px; /* Default width for larger screens */
+  max-width: 90%; /* Ensures it doesn't exceed screen width */
   background: #fff;
   padding: 20px;
   border-radius: 15px;
@@ -48,9 +51,36 @@ summary {
   opacity: 0;
 }
 
+/* Smaller popup on mobile screens */
+@media screen and (max-width: 600px) {
+  #popup-box {
+      width: 90%;  /* Make it more compact */
+      max-width: 320px; /* Smaller size on mobile */
+      padding: 15px; /* Reduce padding */
+  }
+
+  #popup-box h2 {
+      font-size: 1.2rem; /* Reduce heading size */
+  }
+
+  #popup-box p {
+      font-size: 0.9rem; /* Adjust text size */
+  }
+
+  input, textarea {
+      font-size: 14px; /* Adjust input field size */
+  }
+
+  button {
+      font-size: 14px;
+      padding: 8px 12px;
+  }
+}
+
 #popup-box p {
   font-size: 18px; /* Adjust the size as needed */
   line-height: 1.5; /* Improves readability */
+  color: #212121;
 }
 
 #popup-box form {

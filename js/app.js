@@ -105,7 +105,7 @@
         setTimeout(function () {
             $("#overlay-popup").fadeIn();
             $("#popup-box").addClass("popup-show");
-        }, 3000);
+        }, 1000);
 
         // Close notification
         $(".btn-close").click(function () {
